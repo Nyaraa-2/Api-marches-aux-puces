@@ -42,7 +42,7 @@ public class MarcheServiceImpl implements MarcheService {
     @Override
     public void deleteById(Integer integer) {
         List<MarcheDto> marcheDtoList = getAllMarket(false,false);
-        boolean findMarket = marcheDtoList.stream() //retourne vrai s'il trouve qqch
+        boolean findMarket = marcheDtoList.stream()
                 .anyMatch(marcheDto -> marcheDto.getId().equals(integer));
         if (!findMarket) {
             throw new NotFoundExceptionMarche();

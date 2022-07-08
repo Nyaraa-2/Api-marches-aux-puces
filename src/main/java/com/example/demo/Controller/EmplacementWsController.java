@@ -14,7 +14,7 @@ import java.util.List;
 @Validated
 @RestController
 public class EmplacementWsController  {
-    private EmplacementService emplacementService;
+    private final EmplacementService emplacementService;
 
     public EmplacementWsController(EmplacementService emplacementService) {
         this.emplacementService = emplacementService;
@@ -26,7 +26,6 @@ public class EmplacementWsController  {
     }
 
     @GetMapping("/{id}")
-    public EmplacementDto findEmplacements(@PathVariable("id") Integer id){
-        return emplacementService.findById(id);
+    public EmplacementDto findEmplacements(@PathVariable("id") Integer id){return emplacementService.findById(id);
     }
 }
